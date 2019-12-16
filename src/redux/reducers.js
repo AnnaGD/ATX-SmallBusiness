@@ -30,7 +30,7 @@ const authentication = (state = initialState, { type, value }) => {
 };
 
 const listings = (state = initialState, action) => {
-	switch (type) {
+	switch (action.type) {
 		case "ADD_LISTING":
 			return [...state, action.value];
 		case "REMOVE_LISTING":
