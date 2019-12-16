@@ -1,12 +1,12 @@
 import React from "react";
-import { AppBar, ToolBar, IconButton, Typography } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
+import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
+import MenuIcon from "@material-ui/styles/ServerStyleSheets/index";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
 	return (
 		<AppBar position="relative">
-			<ToolBar>
+			<Toolbar>
 				<IconButton color="inherit">
 					<MenuIcon />
 				</IconButton>
@@ -21,7 +21,7 @@ const Navigation = () => {
 						<Link to="/Listings">Listings</Link>
 					</li>
 				</ul>
-			</ToolBar>
+			</Toolbar>
 		</AppBar>
 	);
 };
