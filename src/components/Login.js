@@ -71,3 +71,4 @@ class Login extends PureComponent {
 }
 
 export default withRouter(Login);
+
