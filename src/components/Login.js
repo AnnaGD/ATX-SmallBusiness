@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Button, TextField, Container } from "@material-ui/core";
 // import { render } from '';
 
-class Login extends PureComponent {
+class Login extends Component {
 	state = {
 		username: "",
 		password: ""

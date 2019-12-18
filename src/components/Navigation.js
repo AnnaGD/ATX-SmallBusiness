@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
-import MenuIcon from "@material-ui/styles/ServerStyleSheets/index";
+// import MenuIcon from "@material-ui/styles/ServerStyleSheets/index";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -8,7 +8,7 @@ const Navigation = () => {
 		<AppBar position="relative">
 			<Toolbar>
 				<IconButton color="inherit">
-					<MenuIcon />
+					
 				</IconButton>
 				<Typography variant="h6" style={{ flexGrow: "1" }}>
 					ATX Small Bussiness
