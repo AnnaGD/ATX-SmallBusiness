@@ -22,8 +22,8 @@ function App() {
 	
 		<BrowserRouter>
 		<Provider store={store}>
-				<Router />
-			</Provider>
+			<Router />
+			<Provider /> 
 		</BrowserRouter>
 	);
 }
