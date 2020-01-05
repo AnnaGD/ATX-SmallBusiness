@@ -10,8 +10,8 @@ function App() {
 	return (
 		<Provider store={store}>
 			<BrowserRouter>
-				<Router />
 				<Navigation />
+				<Router />
 			</BrowserRouter>
 		</Provider>
 	);

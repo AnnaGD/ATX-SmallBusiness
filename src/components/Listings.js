@@ -7,19 +7,19 @@ import {
 	TableHead,
 	TableRow
 } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteIcon from '@material-ui/icons/Delete';
 import { withRouter } from "react-router-dom";
-import styled from "styled-components";
+// import styled from "styled-components";
 
-const StyleRow = styled(TableRow)`
-	:hover {
-		cusor: pointer;
-	}
-`;
+// const StyledRow = styled(TableRow)`
+// 	:hover {
+// 		cusor: pointer;
+// 	}
+// `;
 const Listings = props => {
 	const rowClick = (e, listing) => {
 		e.preventDefault();
-		props.history.push({ pathname: `/listin/${listing.id}`, state: listing });
+		props.history.push({ pathname: `/listing/${listing.id}`, state: listing });
 	};
 
 	console.log("listings", props.listings);
@@ -36,8 +36,8 @@ const Listings = props => {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{props.listings.listings.map((listing, idx) => (
-						<StyleRow key={listing.id} onClick={e => rowClick(e, listing)}>
+					{props.listings.map((listing, idx) => (
+						<TableRow key={listing.id} onClick={e => rowClick(e, listing)}>
 							<TableCell underline="hover">{listing["Name"]}</TableCell>
 							<TableCell>{listing["Description"]}</TableCell>
 							<TableCell>{listing["Hours"]}</TableCell>
@@ -50,7 +50,7 @@ const Listings = props => {
 									/>
 								)}
 							</TableCell>
-						</StyleRow>
+						</TableRow>
 					))}
 				</TableBody>
 			</Table>

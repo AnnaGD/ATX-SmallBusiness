@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router";
 import Login from "./components/Login";
 import Listings from './containers/Listings'
 import Details from './components/Details'
-import AddListing from './components/AddListing'
+import AddListing from './containers/AddListing'
 
 const Router = () => {
 	return (

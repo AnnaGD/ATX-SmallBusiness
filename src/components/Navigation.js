@@ -8,20 +8,20 @@ import {
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-class Navigation extends Component {
-	switchClick = () => {
-		console.log("lfse", this.props);
-		if (this.props.login) {
-			this.props.authenticate(null, true);
-		} else {
-			this.props.authenticate(null, false);
-		}
-	};
+const Navigation = (props) => {
 
-	render() {
-		console.log("props-nav", this.props);
-		console.log("user", this.props.user.user);
-		console.log("login", this.props.login);
+	// switchClick = () => {
+	// 	console.log("lfse", props);
+	// 	if (this.props.login) {
+	// 		this.props.authenticate(null, true);
+	// 	} else {
+	// 		this.props.authenticate(null, false);
+	// 	}
+	// };
+
+		console.log("props-nav", props);
+		console.log("user", props.user.user);
+		console.log("login", props.login);
 		return (
 			<div>
 				<AppBar
@@ -40,8 +40,8 @@ class Navigation extends Component {
 								<Link to="/addlisting">Add Listing</Link>
 							</li>
 							<li className="nav-list-item">
-								<Link onClick={this.switchClick} to="/Login">
-									{this.porps.user.user ? "Logout" : "Login"}
+								<Link to="/Login">
+									{props.user.user ? "Logout" : "Login"}
 								</Link>
 							</li>
 						</ul>
@@ -49,15 +49,14 @@ class Navigation extends Component {
 				</AppBar>
 				<SnackbarContent
 					message={
-						this.props.user.user
-							? `Logged in as: ${this.props.user.username}`
+						props.user.user
+							? `Logged in as: ${props.user.username}`
 							: "Please Login"
 					}
 				/>
 			</div>
 		);
 	}
-}
 
 const mapStateToProps = state => ({
 	login: state.authentication.login
