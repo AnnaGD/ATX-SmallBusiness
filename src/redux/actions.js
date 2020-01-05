@@ -14,7 +14,7 @@ export const removeListing = (index) => {
 
 export const userLogin = (user) => {
 	return {
-		type: 'LOGIN'
+		type: 'LOGIN',
 		value: user
 	}
 }

@@ -1,17 +1,17 @@
 import React from "react";
 import { Switch, Route } from "react-router";
 import Login from "./components/Login";
-import Dashboard from './components/Dashboard';
-import cookie from 'cookie'
-import { Redirect } from 'react-router-dom'
-
+import Listings from './containers/Listings'
+import Details from './components/Details'
+import AddListing from './components/AddListing'
 
 const Router = () => {
 	return (
 		<Switch>
-			<Route exact path="/" component={Dashboard} />
+			<Route exact path="/listing" component={Listings} />
 			<Route path="/login" componenet={Login} />
-			<Route path="/dashboard" component={Dashboard} />
+			<Route path="/listing/:id" component={Details} />
+			<Route path="/addlisting" component={AddListing} />
 		</Switch>
 	);
 };
