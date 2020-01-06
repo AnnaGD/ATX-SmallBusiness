@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
 import { withRouter } from "react-router-dom";
+import AddListing from './AddListing'
 // import styled from "styled-components";
 
 // const StyledRow = styled(TableRow)`
@@ -54,6 +55,9 @@ const Listings = props => {
 					))}
 				</TableBody>
 			</Table>
+			{props.user.login && (
+				<AddListing />
+			)}
 		</Container>
 	);
 };

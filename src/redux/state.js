@@ -1,5 +1,8 @@
 export default {
-    login: false,
+    user: {
+        login: false,
+        username: 'test1'
+    },
     listings: [
         {
             "id": 1,

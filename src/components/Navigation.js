@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import {
 	AppBar,
 	Toolbar,
 	Typography,
 	SnackbarContent
 } from "@material-ui/core";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
@@ -20,10 +20,10 @@ const Navigation = (props) => {
 	// };
 
 		console.log("props-nav", props);
-		console.log("user", props.user.user);
-		console.log("login", props.login);
+		console.log("user", props.user);
+		console.log("login", props.user.login);
 		return (
-			<div>
+			<>
 				<AppBar
 					position="relative"
 					style={{ background: "#3CB371", height: 75 }}
@@ -34,14 +34,14 @@ const Navigation = (props) => {
 						</Typography>
 						<ul className="nav-list">
 							<li className="nav-list-item">
-								<Link to="/listing">Listings</Link>
+								<Link to="/">Listings</Link>
 							</li>
 							<li className="nav-list-item">
 								<Link to="/addlisting">Add Listing</Link>
 							</li>
 							<li className="nav-list-item">
-								<Link to="/Login">
-									{props.user.user ? "Logout" : "Login"}
+								<Link to="/login">
+									{props.user.login ? "Logout" : "Login"}
 								</Link>
 							</li>
 						</ul>
@@ -49,20 +49,13 @@ const Navigation = (props) => {
 				</AppBar>
 				<SnackbarContent
 					message={
-						props.user.user
+						props.user.login
 							? `Logged in as: ${props.user.username}`
 							: "Please Login"
 					}
 				/>
-			</div>
+			</>
 		);
 	}
 
-const mapStateToProps = state => ({
-	login: state.authentication.login
-});
-
-export default connect(
-	mapStateToProps,
-	null
-)(Navigation);
+export default Navigation;

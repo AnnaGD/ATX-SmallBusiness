@@ -1,73 +1,47 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import React from "react";
 import { Button, TextField, Container } from "@material-ui/core";
 // import { render } from '';
+import { Link } from "react-router-dom";
 
-class Login extends Component {
-	state = {
-		username: "",
-		password: ""
-	};
-
-	onTextChnage = e => {
-		const { name, value } = e.target;
-		this.setState({
-			[name]: value
-		});
-	};
-
-	login = e => {
-		const newUser = {
-			username: this.state.username,
-			password: this.state.password
-		};
-
-		e.preventDefault();
-		document.cookie = "loggedIn = true; max-age = 60*1000";
-		console.log("Props-login:", this.props);
-		this.props.userLogin(newUser);
-		this.props.authenticate();
-		this.porps.history.push("/listing");
-	};
-
-	render() {
-		return (
-			<div className="login-form">
-				<Container maxWidth="sm">
-					<form onSubmit={this.login}>
-						<TextField
-							className="username"
-							onChange={this.onTextChange}
-							value={this.state.username}
-							name="username"
-							label="Username"
-							required
-							type="text"
-						/>
-						<br />
-						<TextField
-							className="password"
-							onChange={this.onTextChange}
-							value={this.state.password}
-							name="password"
-							lable="Password"
-							type="password"
-							required
-						/>
-						<br />
+const Login = (props) => {
+debugger
+	return (
+		<div className="App">
+		Hiiiiii
+			<Container maxWidth="sm">
+				<form
+					className="login-form"
+					// onSubmit={this.login}>
+				>
+					<TextField
+						required
+						// onChange={this.handleTextChange}
+						// value={this.state.username}
+						name="username"
+						label="Username"
+						type="text"
+					/>
+					<TextField
+						required
+						name="password"
+						label="Password"
+						type="password"
+					/>
+					<Link to={"/"}>
 						<Button
 							type="submit"
+							className="login-button"
 							variant="contained"
 							color="primary"
-							className="login-button"
+							onClick={() => props.userLogin()}
 						>
 							Login
 						</Button>
-					</form>
-				</Container>
-			</div>
-		);
-	}
-}
+					</Link>
+				</form>
+			</Container>
+		</div>
+	);
+};
 
-export default withRouter(Login);
+export default Login;

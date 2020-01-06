@@ -1,33 +1,32 @@
 import { combineReducers } from "redux";
 import initialState from "../redux/state";
 
-const user = (state = initialState, { type, value }) => {
-	switch (type) {
+const user = (state = [], action) => {
+	switch (action.type) {
 		case "LOGIN":
-			console.log(value);
-			return {
-				...state,
-				user: value
-			};
+			console.log(action.value);
+			return Object.assign({}, state, {
+				login: action.value
+			})
 		default:
-			return state;
+			return state
 	}
 };
 
-const authentication = (state = initialState, { type, value }) => {
-	switch (type) {
-		case "AUTHENTICATE":
-			console.log("authentication", state);
-			return {
-				...state,
-				authentication: {
-					login: value.boolean
-				}
-			};
-		default:
-			return state;
-	}
-};
+// const authentication = (state = initialState, action) => {
+// 	switch (action.type) {
+// 		case "AUTHENTICATE":
+// 			console.log("authentication", state);
+// 			return {
+// 				...state,
+// 				authentication: {
+// 					login: action.value
+// 				}
+// 			};
+// 		default:
+// 			return state;
+// 	}
+// };
 
 const listings = (state = initialState, action) => {
 	switch (action.type) {
@@ -42,4 +41,4 @@ const listings = (state = initialState, action) => {
 	}
 };
 
-export default combineReducers({ user, listings, authentication });
+export default combineReducers({ initialState, user, listings });

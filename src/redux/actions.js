@@ -12,10 +12,10 @@ export const removeListing = (index) => {
 	}
 }
 
-export const userLogin = (user) => {
+export const userLogin = () => {
 	return {
 		type: 'LOGIN',
-		value: user
+		value: true
 	}
 }
 
